@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 /* END RESET */
 /* GENERAL CONTAINER SETTING */
 body {
@@ -21,5 +22,131 @@ body {
     width: 80%;
     height: 90vh;
     margin-top: 50px;
+    display: flex;
 }
+
 /* END GENERAL CONTAINER SETTING  */
+/* IMG GENERAL SETTING */
+img {
+    max-width: 100%;
+    width: 70px;
+    height: 70px;
+}
+
+.avatar {
+    border-radius: 50%;
+    padding-top: 5px;
+}
+
+.awesome {
+    font-size: 2rem;
+}
+
+
+
+/* COL SETTING BASE */
+.col-4 {
+    width: 33.33%;
+    height: 100%;
+}
+
+.col-8 {
+    width: 66.66%;
+    height: 100%;
+}
+
+/* COL-4 SPECIFIC SETTING */
+/* COL-4-HEAD SETTING */
+.col-4-head {
+    height: 80px;
+    background-color: #EAEAEA;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid grey;
+
+}
+
+.avatar-spot {
+    display: flex;
+    line-height: 80px;
+    margin: 15px;
+
+}
+
+.my_awesome {
+    margin: 15px;
+
+}
+
+/* END COL-4-HEAD-SETTING */
+/* COL-4-NAV SETTING */
+.col-4-nav {
+    height: 150px;
+}
+
+/* START COL-4-NOTIFICATION */
+.notification {
+    background-color: #8EDAFC;
+    height: 90px;
+    display: flex;
+    align-items: center;
+}
+
+.fa-bell-slash {
+    padding: 10px;
+    margin-left: 20px;
+    background-color: white;
+    border-radius: 50%;
+    color: #8EDAFC;
+}
+
+.notification-text {
+    padding: 10px;
+}
+
+/* END COL-4-NOTIFICATION */
+/* START COL-4-RESEARCH */
+.search-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+    border: 1px solid black;
+}
+
+.search-button {
+    border: none;
+    background-color: transparent;
+    color: #999999;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.search-button:hover {
+    color: #ffffff;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    background-color: #f2f2f2;
+    color: #999999;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: #999999;
+    opacity: 0.5;
+}
+
+.search-input:focus {
+    background-color: #ffffff;
+    color: #000000;
+}
+/* END COL-4-SEARCH */

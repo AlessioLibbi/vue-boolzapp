@@ -6,32 +6,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
     <div id="app">
         <div class="wrapper">
             <div class="content">
+                <!-- INIZIO PRIMA  COLONNA  -->
                 <div class="col-4">
+                    <!-- HEADER PRIMA COLONNA -->
                     <header class="col-4-head">
-
+                        <div class="avatar-spot">
+                            <img class="avatar" src="img/avatar_io.jpg" alt="">
+                            <h5>Sofia</h5>
+                        </div>
+                        <div class="my_awesome awesome">
+                            <i class="fa-solid fa-circle-notch " style="color: #B1B1B1;"></i>
+                            <i class="fa-solid fa-message" style="color: #B1B1B1;"></i>
+                            <i class="fa-solid fa-ellipsis-vertical" style="color: #B1B1B1;"></i>
+                        </div>
                     </header>
+                    <!-- FINE HEADER PRIMA COLONNA -->
+                    <!-- START NAVIGAZIONE PRIMA COLONNA -->
                     <nav class="col-4-nav">
+                        <!-- NOTIFICATION PART -->
+                        <div class="notification">
+                            <div class="awesome ">
+                                <i class="fa-regular fa-bell-slash" ;></i>
+                            </div>
+                            <div class="notification-text">
+                                <p>Ricevi notifiche di nuovi messaggi</p>
+                                <a href="">Attiva notifiche dekstop</a>
+                            </div>
 
+                        </div>
+                        <!-- FINE NOTIFICATION -->
+                        <!-- INIZIO RICERCA -->
+                        <div class="search-container">
+                            <button class="search-button" type="submit">
+                              <i class="fas fa-search"></i>
+                            </button>
+                            <input type="text" class="search-input" placeholder="Cerca o inizia una nuova chat">
+                          </div>
+                          <!-- FINE RICERCA -->
                     </nav>
+                    <!-- FINE PARTE NAVIGAZIONE -->
                     <main class="col-4-main">
 
                     </main>
                 </div>
                 <div class="col-8">
-                    <header class="col-4-head">
+                    <header class="col-8-head">
 
                     </header>
                     <main class="col-8-main">
 
                     </main>
                     <footer class="col-8-foot">
-                        
+
                     </footer>
                 </div>
             </div>
