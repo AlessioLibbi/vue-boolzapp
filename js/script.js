@@ -1,4 +1,4 @@
-const { createApp } = Vue;
+const {createApp} = Vue;
 
 createApp({
     data() {
@@ -163,11 +163,12 @@ createApp({
                             message: 'OK!!',
                             status: 'received'
                         }
-                    ],
+                    ]
                 }
             ]
               
         }
     },
     
-})
+}).mount("#app")
+

@@ -11,6 +11,10 @@ body {
     background: linear-gradient(180deg, #009688 10%, #DADBD4 10%);
 }
 
+.fa-solid {
+    padding: 10px;
+}
+
 .wrapper {
     width: 100%;
     height: 100vh;
@@ -35,7 +39,7 @@ img {
 
 .avatar {
     border-radius: 50%;
-    padding-top: 5px;
+    margin: 5px;
 }
 
 .awesome {
@@ -63,28 +67,19 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid grey;
-
 }
 
 .avatar-spot {
     display: flex;
     line-height: 80px;
-    margin: 15px;
-
+    margin-left: 15px;
 }
 
 .my_awesome {
     margin: 15px;
-
 }
 
 /* END COL-4-HEAD-SETTING */
-/* COL-4-NAV SETTING */
-.col-4-nav {
-    height: 150px;
-}
-
 /* START COL-4-NOTIFICATION */
 .notification {
     background-color: #8EDAFC;
@@ -108,13 +103,13 @@ img {
 /* END COL-4-NOTIFICATION */
 /* START COL-4-RESEARCH */
 .search-container {
+    background-color: white;
     display: flex;
     align-items: center;
     width: 100%;
-    max-width: 500px;
     margin: 0 auto;
     position: relative;
-    border: 1px solid black;
+    height: 50px;
 }
 
 .search-button {
@@ -150,3 +145,68 @@ img {
     color: #000000;
 }
 /* END COL-4-SEARCH */
+/* START COL-4-MAIN */
+.col-4-main {
+    background-color: white;
+    overflow: auto;
+    height: calc(100% - 220px);
+}
+.user {
+    display: flex;
+    justify-content: space-between;
+    
+}
+.avatar-info {
+    display: flex;
+    align-items: center;
+}
+.last-mess {
+    color: lightgray;
+}
+
+/* END COL-4-MAIN */
+
+/* START COL-8-HEAD */
+.col-8-head {
+    height: 80px;
+    background-color: #EAEAEA;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.col-8-main {
+    height: calc(100% - 160px);
+    background-image: url("../img/mine.jpg");
+    overflow: auto;
+    
+}
+
+.col-8-foot {
+    height: 80px;
+    background-color: #EAEAEA;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+/* COL-8-FOOT */
+.message-input {
+    width: 70%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    background-color: #f2f2f2;
+    color: #999999 ;
+    outline: none;
+}
+.message-input::placeholder {
+    color: #999999 ;
+    opacity: 0.5;
+}
+.message-input:focus {
+    background-color: #ffffff;
+    color: #000000;
+}
+.col-8-foot i {
+    font-size: 2rem;
+}

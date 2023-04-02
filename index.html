@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
+
 <body>
     <div id="app">
         <div class="wrapper">
@@ -22,9 +26,9 @@
                             <h5>Sofia</h5>
                         </div>
                         <div class="my_awesome awesome">
-                            <i class="fa-solid fa-circle-notch " style="color: #B1B1B1;"></i>
-                            <i class="fa-solid fa-message" style="color: #B1B1B1;"></i>
-                            <i class="fa-solid fa-ellipsis-vertical" style="color: #B1B1B1;"></i>
+                            <i class="fa-solid fa-circle-notch " style="color: #B1B1B1"></i>
+                            <i class="fa-solid fa-message" style="color: #B1B1B1"></i>
+                            <i class="fa-solid fa-ellipsis-vertical" style="color: #B1B1B1"></i>
                         </div>
                     </header>
                     <!-- FINE HEADER PRIMA COLONNA -->
@@ -33,7 +37,7 @@
                         <!-- NOTIFICATION PART -->
                         <div class="notification">
                             <div class="awesome ">
-                                <i class="fa-regular fa-bell-slash" ;></i>
+                                <i class="fa-regular fa-bell-slash"></i>
                             </div>
                             <div class="notification-text">
                                 <p>Ricevi notifiche di nuovi messaggi</p>
@@ -45,26 +49,54 @@
                         <!-- INIZIO RICERCA -->
                         <div class="search-container">
                             <button class="search-button" type="submit">
-                              <i class="fas fa-search"></i>
+                                <i class="fas fa-search"></i>
                             </button>
                             <input type="text" class="search-input" placeholder="Cerca o inizia una nuova chat">
-                          </div>
-                          <!-- FINE RICERCA -->
+                        </div>
+                        <!-- FINE RICERCA -->
                     </nav>
                     <!-- FINE PARTE NAVIGAZIONE -->
                     <main class="col-4-main">
+                        <div v-for="contact in contacts" class="users-list">
+                            <div class="user">
+                                <div class="avatar-info">
+                                    <img class="avatar" :src="`img/avatar${contact.avatar}.jpg`" alt="">
+                                    <div class="avatar-name">
+                                        <h5>{{contact.name}}</h5>
+                                        <p class="last-mess">{{contact.messages[contact.messages.length -1].message}}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="ora">
+                                    <span class="last-mess">12.00</span>
+                                </div>
+                            </div>
+                        </div>
 
                     </main>
                 </div>
                 <div class="col-8">
                     <header class="col-8-head">
-
+                        <div class="avatar-info">
+                            <img class="avatar" src="img/avatar_1.jpg" alt="">
+                            <div class="avatar-name">
+                                <h5>Michele</h5>
+                                <p class="last-mess">Ultimo messagio oggi alle 12.00</p>
+                            </div>
+                        </div>
+                        <div class="my_awesome awesome">
+                            <i class="fa-solid fa-circle-notch " style="color: #B1B1B1"></i>
+                            <i class="fa-solid fa-message" style="color: #B1B1B1"></i>
+                            <i class="fa-solid fa-ellipsis-vertical" style="color: #B1B1B1"></i>
+                        </div>
                     </header>
                     <main class="col-8-main">
 
                     </main>
                     <footer class="col-8-foot">
-
+                        <i class="fa-solid fa-circle-notch " style="color: #B1B1B1"></i>
+                        <input type="text" class="message-input" placeholder="Scrivi un emssaggio">
+                        <i class="fa-solid fa-circle-notch " style="color: #B1B1B1"></i>
                     </footer>
                 </div>
             </div>
@@ -73,4 +105,5 @@
     </div>
     <script src="js/script.js"></script>
 </body>
+
 </html>
