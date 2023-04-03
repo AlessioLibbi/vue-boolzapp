@@ -57,7 +57,7 @@
                     </nav>
                     <!-- FINE PARTE NAVIGAZIONE -->
                     <main class="col-4-main">
-                        <div v-for="contact in contacts" class="users-list">
+                        <div  v-for="contact in contacts" @click="activeUser(contact)" class="users-list">
                             <div class="user">
                                 <div class="avatar-info">
                                     <img class="avatar" :src="`img/avatar${contact.avatar}.jpg`" alt="">
@@ -72,31 +72,37 @@
                                 </div>
                             </div>
                         </div>
-
                     </main>
                 </div>
                 <div class="col-8">
                     <header class="col-8-head">
                         <div class="avatar-info">
-                            <img class="avatar" src="img/avatar_1.jpg" alt="">
+                            <img class="avatar" :src="`img/avatar${currUserImg}.jpg`">
                             <div class="avatar-name">
-                                <h5>Michele</h5>
+                                <h5>{{currUserName}}</h5>
                                 <p class="last-mess">Ultimo messagio oggi alle 12.00</p>
                             </div>
                         </div>
                         <div class="my_awesome awesome">
-                            <i class="fa-solid fa-circle-notch " style="color: #B1B1B1"></i>
-                            <i class="fa-solid fa-message" style="color: #B1B1B1"></i>
+                            <i class="fa-solid fa-magnifying-glass" style="color: #B1B1B1;"></i>
+                            <i class="fa-solid fa-paperclip" style="color: #B1B1B1;"></i>
                             <i class="fa-solid fa-ellipsis-vertical" style="color: #B1B1B1"></i>
                         </div>
                     </header>
                     <main class="col-8-main">
+                        <div class="row">
+                            <div v-for="message in currUserMessage" :class="message.status == 'sent' ? 'message-send' : 'message-recived'">
+                                <div class="message">
+                                    {{message.message}}
+                                </div>
+                            </div>
 
+                        </div>
                     </main>
                     <footer class="col-8-foot">
-                        <i class="fa-solid fa-circle-notch " style="color: #B1B1B1"></i>
-                        <input type="text" class="message-input" placeholder="Scrivi un emssaggio">
-                        <i class="fa-solid fa-circle-notch " style="color: #B1B1B1"></i>
+                        <i class="fa-regular fa-face-smile" style="color: #B1B1B1;"></i>
+                        <input ref="newMessage" @keyUp.enter="newMessage" type="text" class="message-input" placeholder="Scrivi un messaggio">
+                        <i class="fa-solid fa-microphone" style="color:#B1B1B1;"></i>
                     </footer>
                 </div>
             </div>

@@ -1,8 +1,14 @@
-const {createApp} = Vue;
+const { createApp } = Vue;
+
 
 createApp({
     data() {
         return {
+
+            currUserImg: '',
+            currUserName: '',
+            currUserMessage: '',
+
             contacts: [
                 {
                     name: 'Michele',
@@ -165,10 +171,36 @@ createApp({
                         }
                     ]
                 }
-            ]
-              
+            ],
+
+
         }
     },
-    
+    methods: {
+        activeUser(contact) {
+            this.currUserImg = contact.avatar,
+                this.currUserName = contact.name,
+                this.currUserMessage = contact.messages
+
+        },
+        newMessage() {
+            newMessage = this.$refs.newMessage.value
+            console.log(newMessage);
+            messAdded = {
+                date: '',
+                message: newMessage,
+                status: 'sent'
+            }
+            respAdded = {
+                date: '',
+                message: 'ok',
+                status: 'received'
+            }
+            if (newMessage !== ''){
+                this.currUserMessage.push(messAdded, respAdded)
+                this.$refs.newMessage.value = ''
+            }
+        }
+    }
 }).mount("#app")
 

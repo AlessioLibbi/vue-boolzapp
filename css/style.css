@@ -156,10 +156,16 @@ img {
     justify-content: space-between;
     
 }
+.user:hover {
+    cursor: pointer;
+    background-color: #D5F9BA;
+}
 .avatar-info {
     display: flex;
     align-items: center;
+    
 }
+
 .last-mess {
     color: lightgray;
 }
@@ -178,6 +184,9 @@ img {
     height: calc(100% - 160px);
     background-image: url("../img/mine.jpg");
     overflow: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
     
 }
 
@@ -188,6 +197,33 @@ img {
     align-items: center;
     justify-content: space-around;
 }
+/* END COL-8-HEAD */
+/* START COL-8-MAIN */
+.row {
+    display: flex;
+    flex-direction: column;
+}
+
+.message-send {
+    background-color: #D5F9BA;
+    width: 40%;
+    padding: 15px;
+    align-self: end;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.message-recived {
+    background-color: white;
+    width: 40%;
+    padding: 15px;
+    align-self: flex-start;
+    border-radius: 10px;
+}
+
+
+
+
+
 /* COL-8-FOOT */
 .message-input {
     width: 70%;
