@@ -1,14 +1,20 @@
 const { createApp } = Vue;
 
+const now = luxon.DateTime.now();
+
+const timeNow = now.toFormat("dd/MM/yyyy hh:mm:ss")
+console.log(timeNow);
+const messageDate = luxon.DateTime.fromFormat("10/01/2020 15:30:55", "dd/MM/yyyy hh:mm:ss")
+console.log(messageDate.toFormat("HH:mm"));
 
 createApp({
     data() {
         return {
-
+            currentDate: new Date().toLocaleDateString(),
             currUserImg: '',
             currUserName: '',
             currUserMessage: '',
-
+            currUserDate: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -181,26 +187,31 @@ createApp({
             this.currUserImg = contact.avatar,
                 this.currUserName = contact.name,
                 this.currUserMessage = contact.messages
-
+            this.currUserDate = contact.date
         },
         newMessage() {
             newMessage = this.$refs.newMessage.value
             console.log(newMessage);
             messAdded = {
-                date: '',
+                date: luxon.DateTime.now().toFormat("dd/MM/yyyy hh:mm:ss"),
                 message: newMessage,
                 status: 'sent'
             }
             respAdded = {
-                date: '',
+                date: luxon.DateTime.now().toFormat("dd/MM/yyyy hh:mm:ss"),
                 message: 'ok',
                 status: 'received'
             }
-            if (newMessage !== ''){
+            if (newMessage !== '') {
                 this.currUserMessage.push(messAdded, respAdded)
                 this.$refs.newMessage.value = ''
             }
+        },
+        getMessagTime(date) {
+            let messageDate = luxon.DateTime.fromFormat(date, "dd/MM/yyyy hh:mm:ss")
+            return messageDate.toFormat("HH:mm");
         }
     }
 }).mount("#app")
+
 

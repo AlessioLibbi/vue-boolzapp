@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdn.jsdelivr.net/npm/luxon@3.3.0/build/global/luxon.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 
@@ -57,7 +58,7 @@
                     </nav>
                     <!-- FINE PARTE NAVIGAZIONE -->
                     <main class="col-4-main">
-                        <div  v-for="contact in contacts" @click="activeUser(contact)" class="users-list">
+                        <div v-for="contact in contacts" @click="activeUser(contact)" class="users-list">
                             <div class="user">
                                 <div class="avatar-info">
                                     <img class="avatar" :src="`img/avatar${contact.avatar}.jpg`" alt="">
@@ -91,9 +92,11 @@
                     </header>
                     <main class="col-8-main">
                         <div class="row">
-                            <div v-for="message in currUserMessage" :class="message.status == 'sent' ? 'message-send' : 'message-recived'">
+                            <div v-for="message in currUserMessage"
+                                :class="message.status == 'sent' ? 'message-send' : 'message-recived'">
                                 <div class="message">
                                     {{message.message}}
+                                    <span>{{ getMessagTime(message.date)}}</span>
                                 </div>
                             </div>
 
@@ -101,7 +104,8 @@
                     </main>
                     <footer class="col-8-foot">
                         <i class="fa-regular fa-face-smile" style="color: #B1B1B1;"></i>
-                        <input ref="newMessage" @keyUp.enter="newMessage" type="text" class="message-input" placeholder="Scrivi un messaggio">
+                        <input ref="newMessage" @keyUp.enter="newMessage" type="text" class="message-input"
+                            placeholder="Scrivi un messaggio">
                         <i class="fa-solid fa-microphone" style="color:#B1B1B1;"></i>
                     </footer>
                 </div>

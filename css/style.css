@@ -219,7 +219,9 @@ img {
     align-self: flex-start;
     border-radius: 10px;
 }
-
+.message {
+    word-wrap: break-word;
+}
 
 
 
